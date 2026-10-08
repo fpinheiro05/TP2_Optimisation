@@ -1,0 +1,22 @@
+$ npm run test:unit 2>&1
+
+
+> salles-api@0.4.2 test:unit
+> vitest run
+
+
+[1m[7m[36m RUN [39m[27m[22m [36mv2.1.9 [39m[90mC:/Users/flori/OneDrive/Documents/Travaux/tp2-Florian-PINHEIRO[39m
+
+ [32mÔ£ô[39m test/price.spec.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 4[2mms[22m[39m
+ [32mÔ£ô[39m test/overlap.spec.ts [2m([22m[2m6 tests[22m[2m | [22m[33m1 skipped[39m[2m)[22m[90m 4[2mms[22m[39m
+ [32mÔ£ô[39m test/store.spec.ts [2m([22m[2m3 tests[22m[2m)[22m[90m 4[2mms[22m[39m
+ [32mÔ£ô[39m test/availability.spec.ts [2m([22m[2m7 tests[22m[2m)[22m[90m 278[2mms[22m[39m
+ [32mÔ£ô[39m test/bookings.spec.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 293[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m5 passed[39m[22m[90m (5)[39m
+[2m      Tests [22m [1m[32m24 passed[39m[22m[2m | [22m[33m1 skipped[39m[90m (25)[39m
+[2m   Start at [22m 16:43:16
+[2m   Duration [22m 3.55s[2m (transform 302ms, setup 0ms, collect 4.82s, tests 583ms, environment 1ms, prepare 3.16s)[22m
+
+
+exit code: 0

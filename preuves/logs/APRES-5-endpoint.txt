@@ -1,0 +1,37 @@
+$ npm start   # (demarrage en arriere-plan, puis attente 4s)
+
+$ curl.exe -s -i "http://localhost:3000/health"
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 11
+ETag: W/"b-Ai2R8hgEarLmHKwesT1qcY913ys"
+Date: Thu, 08 Oct 2026 14:44:26 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"ok":true}
+
+$ curl.exe -s -i "http://localhost:3000/rooms/labo/availability?date=2026-11-03"
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 124
+ETag: W/"7c-nkcKLX6TotZBUZ4EiEUkQv/ztfg"
+Date: Thu, 08 Oct 2026 14:44:26 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"roomId":"labo","date":"2026-11-03","busy":[],"free":[{"startsAt":"2026-11-03T08:00:00Z","endsAt":"2026-11-03T20:00:00Z"}]}
+
+$ curl.exe -s -i "http://localhost:3000/rooms/nexistepas/availability?date=2026-11-03"
+HTTP/1.1 404 Not Found
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 26
+ETag: W/"1a-srSMoU2/THRsHxDiS9pALK7E3Is"
+Date: Thu, 08 Oct 2026 14:44:26 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":"salle inconnue"}

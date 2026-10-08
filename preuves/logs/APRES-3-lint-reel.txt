@@ -1,0 +1,14 @@
+$ npm run lint 2>&1
+
+
+> salles-api@0.4.2 lint
+> eslint src test
+
+
+C:\Users\flori\OneDrive\Documents\Travaux\tp2-Florian-PINHEIRO\src\lib\_tmp-lint.ts
+  1:1  error  Do not use "@ts-nocheck" because it alters compilation errors  @typescript-eslint/ban-ts-comment
+
+Ô£û 1 problem (1 error, 0 warnings)
+
+
+exit code: 1

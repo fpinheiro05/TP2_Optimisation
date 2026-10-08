@@ -1,0 +1,8 @@
+Contexte : invocation d'un agent sur la branche `tp2-reparations` (depot repare).
+Resultat brut renvoye par l'outil de delegation :
+
+GENERAL OK — le sous-agent repond sur tp2-reparations
+
+Comparaison : sur `main`, l'agent `dev` echouait avec
+"Model unavailable: opencode/deepseek-v4-pro" (voir AVANT-1-modele-indisponible.txt).
+Sur `tp2-reparations`, la ligne `model:` morte a ete retiree et l'agent demarre.

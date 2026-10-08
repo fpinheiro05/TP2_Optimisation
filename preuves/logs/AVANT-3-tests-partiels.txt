@@ -1,0 +1,18 @@
+Commande: npm run test:unit 2>&1
+============================================================
+
+> salles-api@0.4.2 test:unit
+> vitest run
+
+
+[1m[7m[36m RUN [39m[27m[22m [36mv2.1.9 [39m[90mC:/Users/flori/OneDrive/Documents/Travaux/tp2-Florian-PINHEIRO[39m
+
+ [32m✓[39m test/store.spec.ts [2m([22m[2m3 tests[22m[2m)[22m[90m 5[2mms[22m[39m
+ [32m✓[39m test/overlap.spec.ts [2m([22m[2m6 tests[22m[2m | [22m[33m4 skipped[39m[2m)[22m[90m 4[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m2 passed[39m[22m[90m (2)[39m
+[2m      Tests [22m [1m[32m5 passed[39m[22m[2m | [22m[33m4 skipped[39m[90m (9)[39m
+[2m   Start at [22m 16:41:28
+[2m   Duration [22m 736ms[2m (transform 98ms, setup 0ms, collect 175ms, tests 8ms, environment 1ms, prepare 452ms)[22m
+
+EXITCODE=0

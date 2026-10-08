@@ -1,0 +1,7 @@
+Contexte : invocation d'un agent DU DEPOT (ici `dev`) sur la branche `main`.
+Resultat brut renvoye par l'outil de delegation :
+
+{"error":{"type":"tool.execution","message":"Subagent failed (sessionID: ses_...): Model unavailable: opencode/deepseek-v4-pro"},"content":[]}
+
+Cause : .opencode/agent/dev.md:4 declare `model: opencode/deepseek-v4-pro`, identifiant
+de modele inexistant dans cette instance -> l'agent ne demarre pas.
