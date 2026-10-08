@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-npm run lint
-npm run typecheck
-npm run test:unit
+# Hook pre-commit : branche via core.hooksPath (voir le script "prepare" de package.json).
+# Aucune dependance : on n'utilise pas le paquet husky.
+npm run lint || exit 1
+npm run typecheck || exit 1
+npm run test:unit || exit 1

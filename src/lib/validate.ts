@@ -1,30 +1,34 @@
-/**
- * Validation des charges utiles entrantes.
- */
-export class ValidationError extends Error {
-  status = 400;
-}
+/** Résultat d'une opération qui peut échouer, sans exception. */
+export type Result<T> =
+  | { ok: true; value: T }
+  | { ok: false; error: string };
 
-export function requireString(payload: Record<string, unknown>, field: string): string {
+/** Exige une chaîne non vide dans le payload. */
+export function requireString(payload: Record<string, unknown>, field: string): Result<string> {
   const value = payload[field];
   if (typeof value !== "string" || value.trim() === "") {
-    throw new ValidationError(`champ manquant ou vide : ${field}`);
+    return { ok: false, error: `champ manquant ou vide : ${field}` };
   }
-  return value;
+  return { ok: true, value };
 }
 
-export function requireDate(payload: Record<string, unknown>, field: string): string {
-  const value = requireString(payload, field);
-  if (Number.isNaN(Date.parse(value))) {
-    throw new ValidationError(`date invalide : ${field}`);
+/** Exige une date ISO valide dans le payload. */
+export function requireDate(payload: Record<string, unknown>, field: string): Result<string> {
+  const str = requireString(payload, field);
+  if (!str.ok) {
+    return str;
   }
-  return value;
+  if (Number.isNaN(Date.parse(str.value))) {
+    return { ok: false, error: `date invalide : ${field}` };
+  }
+  return { ok: true, value: str.value };
 }
 
-export function requirePositiveInt(payload: Record<string, unknown>, field: string): number {
+/** Exige un entier strictement positif dans le payload. */
+export function requirePositiveInt(payload: Record<string, unknown>, field: string): Result<number> {
   const value = payload[field];
   if (typeof value !== "number" || !Number.isInteger(value) || value <= 0) {
-    throw new ValidationError(`entier positif attendu : ${field}`);
+    return { ok: false, error: `entier positif attendu : ${field}` };
   }
-  return value;
+  return { ok: true, value };
 }
